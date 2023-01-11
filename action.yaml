@@ -9,6 +9,9 @@ inputs:
   planton_cloud_service_client_id:
     description: 'client-id of the planton cloud machine account to be used for generated api token for making api requests to planton cloud service.'
     required: true
+  planton_cloud_service_client_secret:
+    description: 'client-secret of the planton cloud machine account to be used for generated api token for making api requests to planton cloud service.'
+    required: true
   planton_cloud_product_env_id:
     description: 'id of the target product environment on planton cloud.'
     required: true
