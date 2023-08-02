@@ -2,29 +2,26 @@ name: Deploy Microservice
 description: 'Deploy Microservice to an Environment on Planton Cloud'
 
 inputs:
-  planton_cloud_service_cli_env:
+  planton_cloud_cli_environment:
     description: 'name of the planton cloud cli environment live or test'
     required: false
     default: 'live'
-  planton_cloud_service_client_id:
-    description: 'client-id of the planton cloud machine account to be used for generated api token for making api requests to planton cloud service.'
+  planton_cloud_client_id:
+    description: 'client-id of the planton cloud machine-account to be used for generated api token for making api requests to planton cloud service.'
     required: true
-  planton_cloud_service_client_secret:
-    description: 'client-secret of the planton cloud machine account to be used for generated api token for making api requests to planton cloud service.'
+  planton_cloud_client_secret:
+    description: 'client-secret of the planton cloud machine-account to be used for generated api token for making api requests to planton cloud service.'
     required: true
-  planton_cloud_product_env_id:
-    description: 'id of the target product environment on planton cloud.'
+  planton_cloud_environment_id:
+    description: 'id of the target environment on planton cloud.'
     required: true
-  planton_cloud_microservice_id:
-    description: 'id of the microservice on planton cloud'
+  planton_cloud_environment_name:
+    description: 'name of the target environment on planton cloud.'
     required: true
-  microservice_deployment_version:
-    description: 'microservice deployment version i.e main or review-<pull-request-number>'
+  microservice_instance_version:
+    description: 'microservice-instance version i.e main or review-<pull-request-number>'
     required: true
-  container_image_name:
-    description: 'name of the docker image to be used for tagging and publishing the image'
-    required: true
-  container_image_version:
+  container_image_tag:
     description: 'version(commit-short-shar or tag) of the docker image to be used for tagging and publishing the image'
     required: true
 
@@ -32,11 +29,10 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.planton_cloud_service_cli_env }}
-    - ${{ inputs.planton_cloud_service_client_id }}
-    - ${{ inputs.planton_cloud_service_client_secret }}
-    - ${{ inputs.planton_cloud_product_env_id }}
-    - ${{ inputs.planton_cloud_microservice_id }}
-    - ${{ inputs.microservice_deployment_version }}
-    - ${{ inputs.container_image_name }}
-    - ${{ inputs.container_image_version }}
+    - ${{ inputs.planton_cloud_cli_environment }}
+    - ${{ inputs.planton_cloud_client_id }}
+    - ${{ inputs.planton_cloud_client_secret }}
+    - ${{ inputs.planton_cloud_environment_id }}
+    - ${{ inputs.planton_cloud_environment_name }}
+    - ${{ inputs.microservice_instance_version }}
+    - ${{ inputs.container_image_tag }}
