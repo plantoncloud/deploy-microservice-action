@@ -7,7 +7,7 @@ export PLANTON_CLOUD_CLIENT_ID=${2}
 export PLANTON_CLOUD_CLIENT_SECRET=${3}
 export PLANTON_CLOUD_ENVIRONMENT_ID=${4}
 export PLANTON_CLOUD_ENVIRONMENT_NAME=${5}
-export MICROSERVICE_INSTANCE_VERSION=${6}
+export PLANTON_CLOUD_MICROSERVICE_INSTANCE_VERSION=${6}
 export CONTAINER_IMAGE_TAG=${7}
 
 if ! [ -n "${PLANTON_CLOUD_CLIENT_ID}" ]; then
@@ -26,8 +26,8 @@ if ! [ -n "${PLANTON_CLOUD_ENVIRONMENT_NAME}" ]; then
   echo "PLANTON_CLOUD_ENVIRONMENT_NAME is required. It should be set to the id of the target environment on planton cloud"
   exit 1
 fi
-if ! [ -n "${MICROSERVICE_INSTANCE_VERSION}" ]; then
-  echo "MICROSERVICE_INSTANCE_VERSION is required. It should be set to main or review-<pull-request-number>"
+if ! [ -n "${PLANTON_CLOUD_MICROSERVICE_INSTANCE_VERSION}" ]; then
+  echo "PLANTON_CLOUD_MICROSERVICE_INSTANCE_VERSION is required. It should be set to main or review-<pull-request-number>"
   exit 1
 fi
 if ! [ -n "${CONTAINER_IMAGE_TAG}" ]; then
@@ -35,7 +35,7 @@ if ! [ -n "${CONTAINER_IMAGE_TAG}" ]; then
   exit 1
 fi
 
-echo "running deployment for microservice-instance version: $MICROSERVICE_INSTANCE_VERSION"
+echo "running deployment for microservice-instance version: $PLANTON_CLOUD_MICROSERVICE_INSTANCE_VERSION"
 echo "exchanging planton-cloud client credentials to get an access token"
 planton auth machine login \
   --client-id $PLANTON_CLOUD_CLIENT_ID \

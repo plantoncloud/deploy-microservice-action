@@ -18,7 +18,7 @@ inputs:
   planton_cloud_environment_name:
     description: 'name of the target environment on planton cloud.'
     required: true
-  microservice_instance_version:
+  planton_cloud_microservice_instance_version:
     description: 'microservice-instance version i.e main or review-<pull-request-number>'
     required: true
   container_image_tag:
@@ -34,5 +34,5 @@ runs:
     - ${{ inputs.planton_cloud_client_secret }}
     - ${{ inputs.planton_cloud_environment_id }}
     - ${{ inputs.planton_cloud_environment_name }}
-    - ${{ inputs.microservice_instance_version }}
+    - ${{ inputs.planton_cloud_microservice_instance_version }}
     - ${{ inputs.container_image_tag }}
