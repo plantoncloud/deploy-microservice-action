@@ -8,7 +8,7 @@ export PLANTON_CLOUD_CLIENT_SECRET=${3}
 export PLANTON_CLOUD_ENVIRONMENT_ID=${4}
 export PLANTON_CLOUD_ENVIRONMENT_NAME=${5}
 export MICROSERVICE_INSTANCE_VERSION=${6}
-export container_image_tag=${7}
+export CONTAINER_IMAGE_TAG=${7}
 
 if ! [ -n "${PLANTON_CLOUD_CLIENT_ID}" ]; then
   echo "PLANTON_CLOUD_CLIENT_ID is not set. Configure Machine Account Credentials for Repository or Organization."
