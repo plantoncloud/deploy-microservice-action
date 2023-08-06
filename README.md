@@ -1,4 +1,4 @@
-# GitHub Action: Deploy Microservice using Planton Cloud
+# GitHub Action to Deploy Microservice using Planton Cloud
 
 This repository provides a GitHub Action to deploy a Microservice to an environment managed by Planton Cloud.
 
@@ -34,3 +34,11 @@ Replace `<environment-name>`, `<microservice-instance-version>`, and `<container
 ## Support
 
 If you encounter any issues or require further assistance, please file an issue in this GitHub repository.
+
+## Contributing
+
+If you have suggestions for how this GitHub Action could be improved, or want to report a bug, open an issue! We'd love all and any contributions.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
